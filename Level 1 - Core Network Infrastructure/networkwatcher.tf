@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "networkwatcherwesteurope" {
-  name     = "connectivity-networkwatcher-westeurope"
+  name     = "connectivity-networkwatcher-westeurope-001"
   location = "West Europe"
 }
 
