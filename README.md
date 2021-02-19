@@ -16,5 +16,6 @@ Github - Source Control
 
 TODO
 
-Subscription Activity Logs to Log Analytics
-Azure Sentinel Workspace
+Subscription Activity Logs to Log Analytics - Done (via DINE Policy)
+Azure Sentinel Workspace - Done
+Tags for each DNS Zones
