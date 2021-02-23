@@ -166,7 +166,7 @@ resource "azurerm_local_network_gateway" "nightingaleway" {
   resource_group_name = azurerm_resource_group.hubwesteurope.name
   location            = azurerm_resource_group.hubwesteurope.location
   gateway_fqdn        = "59nightingale.redirectme.net"
-  address_space       = ["192.168.0.0/22"]
+  address_space       = ["192.168.1.0/24"]
 }
 
 resource "azurerm_virtual_network_gateway_connection" "nightingaleway" {

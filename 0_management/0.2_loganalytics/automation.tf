@@ -56,3 +56,31 @@ resource "azurerm_monitor_diagnostic_setting" "automation" {
     }
   }
 }
+
+resource "azurerm_automation_module" "networkingdsc" {
+  provider = azurerm.Management
+  name                    = "NetworkingDsc"
+  resource_group_name     = azurerm_resource_group.automation.name
+  automation_account_name = azurerm_automation_account.platform.name
+  module_link {
+    uri = "https://www.powershellgallery.com/api/v2/package/NetworkingDsc/8.2.0"
+  }
+}
+
+resource "azurerm_automation_dsc_configuration" "allowPing" {
+  provider = azurerm.Management
+  name                    = "Allow_Ping"
+  resource_group_name     = azurerm_resource_group.automation.name
+  automation_account_name = azurerm_automation_account.platform.name
+  location                = azurerm_resource_group.automation.location
+  content_embedded        = "configuration Allow_Ping {}"
+}
+
+resource "azurerm_automation_dsc_nodeconfiguration" "allowPing" {
+  provider = azurerm.Management
+  name                    = "Allow_Ping.localhost"
+  resource_group_name     = azurerm_resource_group.automation.name
+  automation_account_name = azurerm_automation_account.platform.name
+  depends_on              = [azurerm_automation_dsc_configuration.allowPing]
+  content_embedded        = "${file("${path.cwd}/dsc_configurations/allow_ping/localhost.mof")}"
+}

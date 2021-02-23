@@ -1,0 +1,53 @@
+/*
+@TargetNode='localhost'
+@GeneratedBy=liam
+@GenerationDate=02/22/2021 16:37:14
+@GenerationHost=WS01
+*/
+
+instance of DSC_Firewall as $DSC_Firewall1ref
+{
+ModuleName = "NetworkingDsc";
+ Protocol = "icmpv4:8";
+ Name = "PingFirewallRule";
+ Direction = "Inbound";
+ SourceInfo = "C:\\Users\\liam\\Repos\\NotQuiteEnterpriseScale\\0_management\\0.2_loganalytics\\dsc_configurations\\allow-ping.ps1::6::9::Firewall";
+ Ensure = "Present";
+ ModuleVersion = "8.2.0";
+ Description = "Allow Ping requests from internal networks";
+ RemotePort = {
+    "*",
+    "*"
+};
+ Group = "Building Azure Plaform Firewall Rule Group";
+ DisplayName = "Allow ICMP Ping";
+ LocalPort = {
+    "*",
+    "*"
+};
+ Enabled = "True";
+ ResourceID = "[Firewall]AddFirewallRule";
+ Profile = {
+    "Domain",
+    "Private"
+};
+ ConfigurationName = "Allow_Ping";
+};
+instance of OMI_ConfigurationDocument
+
+                    {
+ Version="2.0.0";
+
+                        MinimumCompatibleVersion = "1.0.0";
+
+                        CompatibleVersionAdditionalProperties= {"Omi_BaseResource:ConfigurationName"};
+
+                        Author="liam";
+
+                        GenerationDate="02/22/2021 16:37:14";
+
+                        GenerationHost="WS01";
+
+                        Name="Allow_Ping";
+
+                    };
