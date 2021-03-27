@@ -17,13 +17,13 @@ provider "azurerm" {
 provider "azurerm" {
   features {}
   alias = "Management"
-  subscription_id = "7a59ed2c-6791-4fa3-9d5c-4f7322726284"
+  subscription_id = "1636c70c-ca72-4b17-8981-00e68cb540f8"
 }
 
 provider "azurerm" {
   features {}
   alias = "Identity"
-  subscription_id = "1636c70c-ca72-4b17-8981-00e68cb540f8"
+  subscription_id = "7a59ed2c-6791-4fa3-9d5c-4f7322726284"
 }
 
 provider "azurerm" {
