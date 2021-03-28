@@ -71,7 +71,7 @@ resource "azurerm_network_watcher" "management_northeurope" {
 }
 
 ##CORPORATE
-resource "azurerm_resource_group" "corporate_networkwatcher" {
+/* resource "azurerm_resource_group" "corporate_networkwatcher" {
   provider = azurerm.Corporate
   name     = "corporate-networkwatcher-001"
   location = "West Europe"
@@ -93,7 +93,7 @@ resource "azurerm_network_watcher" "corporate_northeurope" {
   location            = "northeurope"
   resource_group_name = azurerm_resource_group.corporate_networkwatcher.name
 }
-
+ */
 ##ONLINE
 resource "azurerm_resource_group" "online_networkwatcher" {
   provider = azurerm.Online
