@@ -6,6 +6,12 @@ terraform {
       version = ">= 2.26"
     }
   }
+ backend "remote" {
+   organization = "buildingazure"
+   workspaces {
+     name = "management-networkwatcher"
+   }
+ }
 }
 
 provider "azurerm" {
