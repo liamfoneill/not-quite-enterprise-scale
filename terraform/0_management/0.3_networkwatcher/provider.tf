@@ -9,7 +9,7 @@ terraform {
  backend "remote" {
    organization = "buildingazure"
    workspaces {
-     name = "02-management-networkwatcher"
+     name = "networkwatcher"
    }
  }
 }
